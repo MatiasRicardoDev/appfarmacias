@@ -25,15 +25,33 @@
             font-size: 60px;
             font-family: "Biko";
         }
+        #calendar{
+            align-content: center;
+        }
         #calendar form {
             margin-top: 5%;
-            margin-left: 30%;
+            margin-left: 35%;
         }
         #calendar input {
             width:300px;
             height: 100px;
             font-size: 30px;
         }
+        #calendar button {
+            margin-top: 3%;
+            width:300px;
+            height: 50px;
+            padding:auto;
+            font-size: 20px;
+        }
+        #lista ul {
+            list-style-type: none;
+            padding:3%;
+            
+            text-align:center;
+        }
+
+
     </style>
 </head>
 <body>
@@ -64,14 +82,26 @@
                     
                 </form>
             </div>
-            <div>
-                <strong> test </strong>
-                <hr>
-                <br>
-                <hr>
-            </div>
-            <div>
-                lista de turnos
+            <div id="lista">
+                <?php
+                $turno = 'A';
+                $lsta = [
+                'Armellini (Av. Central y 31 Oeste)',
+                'Cabrera (Av. Falcon 222)',
+                'Diamante (Belgrano y Alvarez)',
+                'Furlan (9 de julio 260)',
+                'Gonzalez Pacin (Nacion 314)',
+                'Hector Lopez (Maipu 794)'
+                ]
+                ?>
+                <ul>
+                    <?php
+                        echo '<li> <h3> <strong>'.$turno.'</strong> </h3> </li>';
+                        for ($i=0; $i <count($lsta) ; $i++) { 
+                            echo '<li>'.$lsta[$i].'</li>';
+                        }
+                    ?>
+                </ul>
             </div>
             <div>
                 colaboran
@@ -82,8 +112,5 @@
     <script src="./js/index.js"></script>
     <script src="./libs/pickadate.js-3.6.2/lib/picker.js"></script>
     <script src="./libs/pickadate.js-3.6.2/lib/picker.date.js"></script>
-    <script>
-        
-    </script>
 </body>
 </html>
